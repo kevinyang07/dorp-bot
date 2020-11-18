@@ -10,6 +10,7 @@ click==7.1.2
 cycler==0.10.0
 discord.py==1.5.1
 dnspython==2.0.0
+dotenv-python==0.0.1
 google==3.0.0
 googlesearch-python==2020.0.2
 gTTS==2.2.1
@@ -30,6 +31,7 @@ pymongo==3.11.0
 PyNaCl==1.4.0
 pyparsing==2.4.7
 python-dateutil==2.8.1
+python-dotenv==0.15.0
 pytz==2020.4
 requests==2.24.0
 six==1.15.0
