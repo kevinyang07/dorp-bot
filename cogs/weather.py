@@ -8,7 +8,7 @@ import dotenv
 from dotenv import load_dotenv
 
 load_dotenv()
-weather = os.getenv('weather')
+weatherapi = os.getenv('weather')
 
 class Weather(commands.Cog):
     def __init__(self, bot):
@@ -16,7 +16,7 @@ class Weather(commands.Cog):
 
     @commands.command()
     async def weather(self, ctx,  *, location):
-        data = get((http://api.openweathermap.org/data/2.5/weather?q={}&units=metric&APPID={}).format(location, weather)).json()
+        data = get(f"http://api.openweathermap.org/data/2.5/weather?q={location}&units=metric&APPID={weatherapi}").json()
         cleared_data = {
             'Location:': data['name'],
             'Weather:': f"{data['weather'][0]['main']} - {data['weather'][0]['description']}",
