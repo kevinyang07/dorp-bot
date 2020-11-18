@@ -16,8 +16,7 @@ class Weather(commands.Cog):
 
     @commands.command()
     async def weather(self, ctx,  *, location):
-        link = (http://api.openweathermap.org/data/2.5/weather?q={}&units=metric&APPID={}).format(location, weather)
-        data = get(link).json()
+        data = get((http://api.openweathermap.org/data/2.5/weather?q={}&units=metric&APPID={}).format(location, weather)).json()
         cleared_data = {
             'Location:': data['name'],
             'Weather:': f"{data['weather'][0]['main']} - {data['weather'][0]['description']}",
