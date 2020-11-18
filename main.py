@@ -11,8 +11,13 @@ from datetime import date
 import matplotlib as mpl
 import matplotlib.pyplot as plt
 import random as rn
-import os
 from googlesearch import search
+import os
+import dotenv 
+from dotenv import load_dotenv
+
+load_dotenv()
+token = os.getenv('token')
 
 startup_extensions = ['cogs.wolfram', 'cogs.owner', 'cogs.profile', 'cogs.music.music', 'cogs.dad', 'cogs.weather', 'cogs.game.game', 'cogs.emoji',
 'cogs.2048', 'cogs.detain', 'cogs.covid.tracker']
@@ -428,4 +433,4 @@ if __name__ == "__main__":
             except Exception as e:
                 exc = '{}: {}'.format(type(e).__name__, e)
                 print('Failed to load extension {}\n{}'.format(extension, exc))
-        client.run('Token')
+        client.run(token)
