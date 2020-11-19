@@ -7,10 +7,18 @@ from util.database.data import Data
 from util.database.guilds import Guild
 from util.database.users import User
 
+from discord import Embed
+from discord.ext import commands
+
+import os
+import dotenv
+from dotenv import load_dotenv
+
+load_dotenv()
+
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
-#2922801a-3c5d-41a8-b4bd-ace46a1a0287
 
 class Database:
     """The Database class collects all the functions from each of the
@@ -19,9 +27,9 @@ class Database:
     def __init__(self):
 
         # Create the connection to the Omega Psi database and authenticateusername = os.getenv("USERNAME")
-        password = "nyw24bxRvHMhNUQ"
-        account_name = "kevinyang07"  # replace this of course
-        database_name = "discordbot"  # and this"""
+        password = os.getenv('dbpassword')
+        account_name = os.getenv('dbusername')  # replace this of course
+        database_name = os.getenv('dbname')  # and this"""
         self.client = MongoClient(f"mongodb+srv://{account_name}:{password}@cluster0.7dfwi.mongodb.net/{database_name}?retryWrites=true&w=majority")
         self.discordbot = self.client.discordbot
         self.bot = Bot(self.discordbot["bot"])
