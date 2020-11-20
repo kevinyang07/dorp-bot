@@ -108,12 +108,6 @@ async def plot_graph1(ctx, iso3, num, name):
     embed.set_footer(text=send_banner(), icon_url=ctx.author.avatar_url)
     if num == -1:
         return discord_file
-    embed.add_field(name="dorp",
-                    inline=True)
-    embed.add_field(name="dorp",
-                    inline=True)
-    embed.add_field(name="dorp",
-                    inline=True)
     await ctx.channel.send(embed=embed, file=discord_file)
     if num == 0:
         return
@@ -142,12 +136,6 @@ async def plot_graph1(ctx, iso3, num, name):
     embed = Embed(title=f"Logarithmic graph for country {name}",
                   color=Color.blue())
     embed.set_image(url="attachment://plot.png")
-    embed.add_field(name="dorp",
-                    inline=True)
-    embed.add_field(name="dorp",
-                    inline=True)
-    embed.add_field(name="dorp",
-                    inline=True)
     embed.set_footer(text=send_banner(), icon_url=ctx.author.avatar_url)
     await ctx.channel.send(embed=embed, file=discord_file)
 
@@ -197,12 +185,6 @@ async def plot_graph2(ctx, iso3, name):
     embed = Embed(title=f"Linear graph for country {name}", color=Color.blue())
     embed.set_image(url="attachment://plot.png")
     embed.set_footer(text=send_banner(), icon_url=ctx.author.avatar_url)
-    embed.add_field(name="dorp",
-                    inline=True)
-    embed.add_field(name="dorp",
-                    inline=True)
-    embed.add_field(name="dorp",
-                    inline=True)
     await ctx.channel.send(embed=embed, file=discord_file)
 
 
